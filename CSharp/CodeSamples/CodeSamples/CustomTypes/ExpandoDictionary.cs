@@ -18,6 +18,7 @@ namespace CodeSamples.CustomTypes
 
         public ExpandoDictionary(ExpandoObject keyValuePairs)
         {
+            // https://stackoverflow.com/questions/32618425/how-can-i-convert-an-expandoobject-to-dictionary-in-c
             _keyValuePairs = keyValuePairs;
         }
 
