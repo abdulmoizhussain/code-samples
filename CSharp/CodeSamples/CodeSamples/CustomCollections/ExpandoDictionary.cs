@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
 
-namespace CodeSamples.CustomTypes
+namespace CodeSamples.CustomCollections
 {
     // https://stackoverflow.com/a/9570300/8075004
     public class ExpandoDictionary : IEnumerable
     {
         private readonly IDictionary<string, object> _keyValuePairs;
+
+        public bool IsNull { get; private set; }
 
         public ExpandoDictionary()
         {
@@ -18,6 +20,7 @@ namespace CodeSamples.CustomTypes
 
         public ExpandoDictionary(ExpandoObject keyValuePairs)
         {
+            IsNull = keyValuePairs == null;
             // https://stackoverflow.com/questions/32618425/how-can-i-convert-an-expandoobject-to-dictionary-in-c
             _keyValuePairs = keyValuePairs;
         }
